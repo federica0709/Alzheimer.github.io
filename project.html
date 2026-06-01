@@ -38,7 +38,10 @@
     .brand{
       font-size:1.3rem; font-weight:600; letter-spacing:-0.01em;
       color:var(--ink); text-decoration:none;
+      transition:color .25s ease;
     }
+    .brand:hover,
+    .brand:focus-visible{color:var(--ink-soft);}
     .nav{display:flex; gap:2.5rem;}
     .nav a{
       font-size:1.3rem; font-weight:600; letter-spacing:-0.01em;
