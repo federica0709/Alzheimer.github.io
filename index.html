@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nome progetto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#111111;
+      --ink-soft:#9a9a9a;   /* grigio dell'hover */
+      --rule:#111111;
+      --pad:clamp(1.5rem, 4vw, 3rem);
+    }
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;}
+    body{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:2rem;
+      padding:var(--pad) var(--pad) 0;
+    }
+    .brand{
+      font-size:1.3rem;
+      font-weight:600;
+      letter-spacing:-0.01em;
+      color:var(--ink);
+      text-decoration:none;
+    }
+    .nav{display:flex; gap:2.5rem;}
+    .nav a{
+      font-size:1.3rem;
+      font-weight:600;
+      letter-spacing:-0.01em;
+      color:var(--ink);
+      text-decoration:none;
+      transition:color .25s ease;        /* nero -> grigio dolce */
+    }
+    .nav a:hover,
+    .nav a:focus-visible{color:var(--ink-soft);}
+
+    /* ===== HOME ===== */
+    .home-main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:var(--pad);
+    }
+    .video-box{
+      width:100%;
+      max-width:720px;
+      aspect-ratio:16 / 9;
+      border:1px solid var(--ink);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.4rem;
+      color:var(--ink);
+    }
+    .video-box video,
+    .video-box iframe{width:100%; height:100%; border:0; object-fit:cover; display:block;}
+
+    .legenda{
+      position:absolute;
+      left:var(--pad);
+      bottom:var(--pad);
+      width:clamp(150px, 16vw, 200px);
+      height:auto;
+    }
+
+    @media (max-width:760px){
+      .nav{gap:1.25rem;}
+      .home-main{flex:none;}
+      .legenda{position:static; display:block; margin:2rem auto 0; width:170px;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">nome progetto</a>
+    <nav class="nav">
+      <a href="project.html">project</a>
+      <a href="about.html">about us</a>
+    </nav>
+  </header>
+
+  <main class="home-main">
+    <!-- BOX VIDEO
+         Per ora c'è solo la scritta "video". Per inserire un video vero, sostituisci
+         <div class="video-box">video</div> con UNA di queste due opzioni:
+
+         1) File caricato nella stessa cartella:
+            <div class="video-box"><video controls poster="anteprima.jpg"><source src="video.mp4" type="video/mp4"></video></div>
+
+         2) YouTube/Vimeo (incolla l'iframe di "Condividi > Incorpora"):
+            <div class="video-box"><iframe src="https://www.youtube.com/embed/CODICE" allowfullscreen></iframe></div>
+    -->
+    <div class="video-box">video</div>
+  </main>
+
+  <!-- LEGENDA: salva la tua immagine del cervello come  legenda.png  nella stessa cartella dei file -->
+  <img class="legenda" src="legenda.png" alt="Legenda dei lobi del cervello">
+
+</body>
+</html>
