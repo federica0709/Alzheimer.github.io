@@ -31,6 +31,11 @@
 
     /* ===== HEADER ===== */
     .site-header{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      z-index:10;
       display:flex;
       justify-content:space-between;
       align-items:baseline;
@@ -85,14 +90,15 @@
       position:absolute;
       left:var(--pad);
       bottom:var(--pad);
-      width:clamp(240px, 26vw, 340px);
+      width:clamp(300px, 32vw, 440px);
       height:auto;
     }
 
     @media (max-width:760px){
+      .site-header{position:static;}
       .nav{gap:1.25rem;}
-      .home-main{flex:none;}
-      .legenda{position:static; display:block; margin:2rem auto 0; width:260px;}
+      .home-main{flex:none; min-height:auto; padding-top:1rem;}
+      .legenda{position:static; display:block; margin:2rem auto 0; width:300px;}
     }
   </style>
 </head>
